@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Document</title>
+    <script src="qrcode.min.js"></script>
+</head>
+<body>
+     <input type="text" onchange="generate()" placeholder="Enter Your Text" id="inputText"><br><br>
+     <div id="QRImage"></div>
+
+     <script>
+         var inputText = document.getElementById("inputText");
+         var QRImage = document.getElementById("QRImage");
+
+        var NewImage =  new QRCode(QRImage,{
+              width:200,
+              height:200
+          });
+       function generate(){
+       var data = inputText.value;
+       alert(data);
+       NewImage.makeCode(data);
+       }
+     </script>
+</body>
+</html>
